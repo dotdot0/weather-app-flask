@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home | Weather
+{% endblock title %}
+
+{% block content %}
+<form method="POST" action="#">
+  {{ form.csrf_token() }}
+  <div>
+  {{ form.name.label }} {{ form.name() }}
+  </div>
+</br>
+<div>
+  {{ form.submit() }}
+</div>
+</form>
+{% if name %}
+<h1 class="text-monospace"> {{ name }}</h1>
+{% else %}
+<h1 class="text-monospace"> Stranger! </h1>
+{% endif %}
+{% endblock content %}
