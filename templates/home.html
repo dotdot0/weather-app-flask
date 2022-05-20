@@ -28,9 +28,17 @@ Home | Weather
   
 
 </form>
+<div class="mx-auto" style="width: 900px;">
+  
 {% if name %}
-<h1 class="text-monospace">Temprature Is: {{ temp }} °C</h1>
+{% if temp == 'No matching location found.' %}
+  <h1 class="text-monospace" class="text-primary">{{ temp }}</h1>
 {% else %}
-<h1 class="text-monospace">Please Enter The City</h1>
+  <h1 class="text-monospace" class="text-primary">Temprature Is: {{ temp }} °C</h1>
 {% endif %}
+
+{% else %}
+<h1 class="text-monospace" class="text-primary"> Please Enter The City</h1>
+{% endif %} 
+</div>
 {% endblock content %}
